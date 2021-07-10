@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Marque } from 'src/app/models/marque.model';
 import { MarqueService } from 'src/app/services/marque.service';
-import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-marques-list',
@@ -15,9 +14,7 @@ export class MarquesListComponent implements OnInit {
   currentIndex = -1;
   nom = '';
 
-  constructor(
-    private marqueService: MarqueService,
-    private router: Router) { }
+  constructor(private marqueService: MarqueService) { }
 
   ngOnInit(): void {
     this.retrieveMarques();
