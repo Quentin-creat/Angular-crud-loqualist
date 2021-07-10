@@ -3,36 +3,30 @@
     </div>
     <div class="col-md-6">
       <h4>Liste des marques</h4>
-      <ul class="list-group">
-        <li
-          class="list-group-item"
-          *ngFor="let marque of marques; let i = index"
-          [class.active]="i == currentIndex"
-          (click)="setActiveMarque(marque, i)"
-        >
-          {{ marque.nom }}
-        </li>
-      </ul>
-    </div>
-    <div class="col-md-6">
-      <div *ngIf="currentMarque.id">
-        <h4>Marque</h4>
-        <div>
-          <label><strong>Nom :</strong></label> {{ currentMarque.nom }}
-        </div>
-        <div>
-          <label><strong>Description:</strong></label>
-          {{ currentMarque.description }}
-        </div>
-  
-        <a class="badge badge-warning" routerLink="/marques/{{ currentMarque.id }}">
-          Edit
-        </a>
-      </div>
-  
-      <div *ngIf="!currentMarque">
-        <br />
-        <p>Cliquez sur une marque</p>
-      </div>
+
+
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Description</th>
+            <th scope="col">Opération</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let marque of marques; let i = index">
+            <th scope="row">{{ marque.id }}</th>
+            <td>{{ marque.nom }}</td>
+            <td>{{ marque.description }}</td>
+            <td><a class="badge badge-warning" routerLink="/marques/{{ marque.id }}">
+              Edit
+            </a>
+            <button class="badge badge-danger mr-2" (click)="deleteMarque(marque.id)">
+              Supprimer
+            </button></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>

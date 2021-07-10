@@ -46,7 +46,10 @@ export class MarqueDetailsComponent implements OnInit {
       .subscribe(
         response => {
           console.log(response);
-          this.message = response.message ? response.message : 'La marque a bien été modifié !';
+          if(response.message) {
+            //this.message = 'La marque a bien été modifiée !';
+            this.router.navigate(['/marques']);
+          }
         },
         error => {
           console.log(error);
