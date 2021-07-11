@@ -7,6 +7,9 @@ import { AddMarqueComponent } from './components/add-marque/add-marque.component
 import { MarqueDetailsComponent } from './components/marque-details/marque-details.component';
 import { MarquesListComponent } from './components/marques-list/marques-list.component';
 
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +19,9 @@ import { MarquesListComponent } from './components/marques-list/marques-list.com
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

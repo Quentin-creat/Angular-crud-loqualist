@@ -1,1 +1,46 @@
-<p>marque-details works!</p>
+<div>
+    <div *ngIf="currentMarque.id" class="edit-form">
+      <h4>Marque</h4>
+      <form>
+        <div class="form-group">
+          <label for="nom">Nom</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nom"
+            [(ngModel)]="currentMarque.nom"
+            name="nom"
+          />
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input
+            type="text"
+            class="form-control"
+            id="description"
+            [(ngModel)]="currentMarque.description"
+            name="description"
+          />
+        </div>
+      </form>
+
+      <button
+        type="submit"
+        class="btn btn-warning"
+        (click)="updateMarque()"
+      >
+        Modifier
+      </button>
+  
+      <button class="btn btn-danger" (click)="deleteMarque()">
+        Supprimer
+      </button>
+  
+      <p>{{ message }}</p>
+    </div>
+  
+    <div *ngIf="!currentMarque.id">
+      <br />
+      <p>Ne peut accéder à la marque</p>
+    </div>
+  </div>
