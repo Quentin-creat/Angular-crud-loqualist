@@ -1,4 +1,12 @@
 .edit-form {
     max-width: 400px;
-    margin: auto;
-  }
+    margin: 25px auto;
+}
+
+form {
+  margin-top:20px;
+}
+
+.btn-warning {
+  margin-right:10px;
+}

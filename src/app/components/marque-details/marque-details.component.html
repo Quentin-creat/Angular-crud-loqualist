@@ -23,18 +23,19 @@
           />
         </div>
       </form>
-  
-      <button class="badge badge-danger mr-2" (click)="deleteMarque()">
-        Supprimer
-      </button>
-  
+
       <button
         type="submit"
-        class="badge badge-success mb-2"
+        class="btn btn-warning"
         (click)="updateMarque()"
       >
         Modifier
       </button>
+  
+      <button class="btn btn-danger" (click)="deleteMarque()">
+        Supprimer
+      </button>
+  
       <p>{{ message }}</p>
     </div>
   
